@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> 
+
+<context:annotation-config></context:annotation-config>
+
+
+<bean id="depteeeref" class="com.SpringwithXml.Autowiring.example.Department">
+       <property name="name" value="EEE"></property>
+       <property name="id" value="780"></property>
+</bean> 
+<bean id="deptcseref" class="com.SpringwithXml.Autowiring.example.Department">
+       <property name="name" value="CSE"></property>
+       <property name="id" value="790"></property>
+</bean> 
+
+<bean id="Staffeeeref" class="com.SpringwithXml.Autowiring.example.Staff">
+  <property name="Name" value="Mr.Ravi"/>
+  <property name="id" value="7801"/>
+  <property name="Designation" value="Head Of the Department"/>
+  <property name="depart" value="EEE"/>
+</bean>
+<bean id="Staffcseref" class="com.SpringwithXml.Autowiring.example.Staff">
+  <property name="Name" value="Mr.Aravind"/>
+  <property name="id" value="7901"/>
+  <property name="Designation" value="Head Of the Department"/>
+  <property name="depart" value="CSE"/>
+</bean>
+ 
+<bean id="Stdeeeref" class="com.SpringwithXml.Autowiring.example.Students">
+  <property name="Name" value="Jeya"/>
+  <property name="id" value="78023"/>
+  <property name="department" value="EEE"/>
+  <property name="AcademicStatus" value="Topper"/>
+</bean>
+<bean id="Std2eeeref" class="com.SpringwithXml.Autowiring.example.Students">
+  <property name="Name" value="Jey"/>
+  <property name="id" value="78024"/>
+  <property name="department" value="EEE"/>
+  <property name="AcademicStatus" value="Topper"/>
+</bean>
+<bean id="Stdcseref" class="com.SpringwithXml.Autowiring.example.Students">
+  <property name="Name" value="Joel"/>
+  <property name="id" value="78023"/>
+  <property name="department" value="CSE"/>
+  <property name="AcademicStatus" value="Topper"/>
+</bean>
+
+
+<bean id="clg" class="com.SpringwithXml.Autowiring.example.College">
+   
+   <property name="dept" ref="depteeeref"/>
+   <property name="staff" ref="Staffeeeref"/>
+   <property name="stud" ref="Stdeeeref"/>
+
+</bean>
+</beans>
